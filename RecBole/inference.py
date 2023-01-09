@@ -17,6 +17,7 @@ from tqdm import tqdm
 def get_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_path', type=str)
+    parser.add_argument('--topk', default=10, type=int)
 
     args = parser.parse_args()
     return args
@@ -35,7 +36,7 @@ if __name__ == '__main__':
     preds = []
     for user, uid in tqdm(user_token2id.items()):
         topk_score, topk_iid_list = \
-            full_sort_topk([uid], model=model, test_data=test_data, k=config['topk'][0], device=config['device'])
+            full_sort_topk([uid], model=model, test_data=test_data, k=args.topk, device=config['device'])
         external_item_list = dataset.id2token(dataset.iid_field, topk_iid_list.cpu())
         for item in external_item_list[0]:
             preds.append([user, item])
