@@ -5,6 +5,9 @@ embedding_size: 16
 
 
 # Training Settings
+val_interval:
+    rating: "[0, inf)"
+
 epochs: 20
 train_batch_size: 4096
 learner: adam

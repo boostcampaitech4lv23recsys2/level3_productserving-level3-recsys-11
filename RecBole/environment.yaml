@@ -7,7 +7,7 @@ show_progress: True
 
 # Data Settings
 # dataset: ml-1m
-data_path: /opt/ml/last/dataset/
+data_path: /opt/ml/level3_productserving-level3-recsys-11/dataset/
 
 filed_separator: "\t"
 seq_separator: " "

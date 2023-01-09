@@ -16,7 +16,7 @@ from tqdm import tqdm
 
 def get_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model_path', default='/opt/ml/last/RecBole/saved/BPR-Jan-08-2023_12-03-42.pth', type=str)
+    parser.add_argument('--model_path', type=str)
 
     args = parser.parse_args()
     return args
